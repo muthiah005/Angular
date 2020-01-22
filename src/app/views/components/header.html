@@ -1,0 +1,20 @@
+
+<nav *ngIf="userLoggedIn">
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a routerLink="/product">Product Configuration</a></li>
+            <li> <a routerLink="/user">UserAccounts</a></li>
+            <li><a routerLink="/log">Log Management</a></li>
+            <li> <a routerLink="/more">More</a></li>
+            <li> <a routerLink="/dashboard">dashboard</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down" >
+            <li> <span *ngIf="userInfo">Welcome {{userInfo.name}}</span></li>
+            <li>
+                <div class="logout_area">
+                   <span><i class="material-icons" (click)="userLogout()">power_settings_new</i></span></div>
+            </li>
+        </ul>
+    </div>
+</nav>

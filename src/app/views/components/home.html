@@ -1,0 +1,38 @@
+
+<div class="login_holder">
+    <h5>Login</h5>
+    <div class="row">
+        <div class="col l12 m12 s12">
+            <form [formGroup]="loginForm">
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [defaultValue]=''  maxlength="80"/>
+                        <div *ngIf="f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" class="form-control"  maxlength="30"/>
+                    </div>
+                </div>
+               
+                <span *ngIf="!isValid" class="red-text">Invalid Username or Password</span>
+               
+                <div class="row">
+                    <div class="col l6 m6 s6 left">
+                       
+                    </div>
+                    <div class="col l6 m6 s6 pr0">
+                        <button type="submit" [disabled]="loginForm.invalid" (click)="login()"
+                            class="btn right red">Login</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+    </div>
+</div>
